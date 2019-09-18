@@ -4,29 +4,32 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 public class Worker extends Human {
-    protected Date dateOfRecruitment;
+    protected final LocalDate dateOfRecruitment;
     protected int salary;
     public boolean presence;
 
     public Worker(String fullName,
-                //  Date dateOfBirth,
+                  LocalDate dateOfBirth,
                   String phoneNumber,
-                //  Date dateOfRecruitment,
+                  LocalDate dateOfRecruitment,
                   int salary,
                   boolean presence) {
-        super(fullName, /*dateOfBirth,*/ phoneNumber);
-       // this.dateOfRecruitment = dateOfRecruitment;
+        super(fullName, dateOfBirth, phoneNumber);
+        this.dateOfRecruitment = dateOfRecruitment;
         this.salary = salary;
         this.presence = presence;
     }
-    public void comeToWork(){
-        this.presence=true;
+
+    public void comeToWork() {
+        this.presence = true;
         System.out.println("Сотрудник пришел на работу");
     }
-    public void goToDinner(){
+
+    public void goToDinner() {
         System.out.println("Сотрудник пошел обедать");
     }
-    public void toWork(){
+
+    public void toWork() {
         System.out.println("Сотрудник работает");
     }
 
@@ -40,6 +43,7 @@ public class Worker extends Human {
                 presence == worker.presence &&
                 dateOfRecruitment.equals(worker.dateOfRecruitment);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), dateOfRecruitment, salary, presence);

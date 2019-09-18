@@ -7,21 +7,22 @@ public class Kashier extends Worker {
     public int numberCas;
 
     public Kashier(String fullName,
-                  // Date dateOfBirth,
+                   LocalDate dateOfBirth,
                    String phoneNumber,
-                 //  Date dateOfRecruitment,
+                   LocalDate dateOfRecruitment,
                    int salary,
                    boolean presence,
                    int numberCas) {
-        super(fullName/* dateOfBirth*/, phoneNumber,/* dateOfRecruitment*/salary, presence);
+        super(fullName, dateOfBirth, phoneNumber, dateOfRecruitment, salary, presence);
         this.numberCas = numberCas;
     }
 
-    public void toCountMoney(){
+    public void toCountMoney() {
         System.out.println("Кассир считает деньги");
     }
+
     @Override
-    public void toWork(){
+    public void toWork() {
         System.out.println("Кассир работает");
     }
 

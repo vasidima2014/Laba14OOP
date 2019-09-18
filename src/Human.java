@@ -4,22 +4,23 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 public class Human {
-    protected String fullName;
-    protected Date dateOfBirth;
+    protected final String fullName;
+    protected final LocalDate dateOfBirth;
     protected String phoneNumber;
 
     public Human(String fullName,
-                // Date dateOfBirth,
+                 LocalDate dateOfBirth,
                  String phoneNumber) {
         this.fullName = fullName;
-      //  this.dateOfBirth = dateOfBirth;
+        this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
     }
 
-    public void sayHello(){
+    public void sayHello() {
         System.out.println("Hello");
     }
-    public void sayGoodBye(){
+
+    public void sayGoodBye() {
         System.out.println("GoodBye");
     }
 

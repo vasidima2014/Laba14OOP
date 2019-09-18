@@ -7,27 +7,30 @@ public class Manager extends Worker {
     String department;
 
     public Manager(String fullName,
-                 //  Date dateOfBirth,
+                   LocalDate dateOfBirth,
                    String phoneNumber,
-                 //  Date dateOfRecruitment,
+                   LocalDate dateOfRecruitment,
                    int salary,
                    boolean presence,
                    String department) {
-        super(fullName,/* dateOfBirth*/ phoneNumber/*dateOfRecruitment*/, salary, presence);
+        super(fullName, dateOfBirth, phoneNumber, dateOfRecruitment, salary, presence);
         this.department = department;
     }
 
-    public void toConsult(){
+    public void toConsult() {
         System.out.println("Менеджер консультирует");
     }
-    public void talkAboutDiscounts(){
+
+    public void talkAboutDiscounts() {
         System.out.println("Менеджер рассказывает про скидки");
     }
-    void giveAdvice(){
+
+    public void giveAdvice() {
         System.out.println("Менеджер советует");
     }
+
     @Override
-    public void toWork(){
+    public void toWork() {
         System.out.println("Менеджер работает");
     }
 
@@ -40,6 +43,7 @@ public class Manager extends Worker {
         Manager manager = (Manager) o;
         return department.equals(manager.department);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), department);

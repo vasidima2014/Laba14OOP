@@ -1,22 +1,24 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-public class SecurityGuard extends Worker{
+
+public class SecurityGuard extends Worker {
 
     public SecurityGuard(String fullName,
-                       //  Date dateOfBirth,
+                         LocalDate dateOfBirth,
                          String phoneNumber,
-                     //    Date dateOfRecruitment,
+                         LocalDate dateOfRecruitment,
                          int salary,
                          boolean presence) {
-        super(fullName, /*dateOfBirth*/ phoneNumber,/* dateOfRecruitment*/ salary, presence);
+        super(fullName, dateOfBirth, phoneNumber, dateOfRecruitment, salary, presence);
     }
 
-    public void toWalkieTalkie(){
+    public void toWalkieTalkie() {
         System.out.println("Охранник говорит по рации");
     }
+
     @Override
-    public void toWork(){
+    public void toWork() {
         System.out.println("Охранник работает");
     }
 

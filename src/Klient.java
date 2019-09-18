@@ -8,20 +8,20 @@ public class Klient extends Human {
     protected int money;
 
     public Klient(String fullName,
-                //  Date dateOfBirth,
+                  LocalDate dateOfBirth,
                   String phoneNumber,
                   int discount,
                   int money) {
-        super(fullName, /*dateOfBirth,*/ phoneNumber);
+        super(fullName, dateOfBirth, phoneNumber);
         this.discount = discount;
         this.money = money;
     }
 
-    public void learnAboutGoods(){
+    public void learnAboutGoods() {
         System.out.println("Клиент узнает про товар");
     }
 
-    public void toBuy(){
+    public void toBuy() {
         System.out.println("Клиент покупает");
     }
 
@@ -35,10 +35,12 @@ public class Klient extends Human {
         return discount == klient.discount &&
                 money == klient.money;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), discount, money);
     }
+
     @Override
     public String toString() {
         return "Klient{" +
